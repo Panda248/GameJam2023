@@ -5,12 +5,22 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
+import world.GameMap;
+import world.TileType;
+import world.TiledGameMap;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	
+	Bullet bullet;
+
+	OrthographicCamera camera;
+	GameMap gameMap;
+	OrthogonalTiledMapRenderer mapRenderer;
+
 	@Override
 	public void create () {
 		camera = new OrthographicCamera();
@@ -22,6 +32,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		bullet = new Bullet(0,0);
 
 		batch = new SpriteBatch();
+	}
+
+	public void update(){
+		bullet.update(Gdx.input);
+		camera.translate(1,0);
 	}
 
 	@Override
