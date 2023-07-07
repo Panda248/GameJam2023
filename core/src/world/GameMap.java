@@ -2,6 +2,7 @@ package world;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.Bullet;
 import entities.Entity;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 public abstract class GameMap {
 
     protected ArrayList<Entity> entities;
+
 
     public GameMap(){
         //entities = new ArrayList<Entity>(   );
