@@ -36,7 +36,6 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	public void update(){
 		bullet.update(Gdx.input);
-		camera.translate(1,0);
 	}
 
 	@Override
@@ -50,12 +49,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch.begin();
 		bullet.render(batch);
 		batch.end();
-		/*if (Gdx.input.isTouched()){
-			cam.translate(-Gdx.input.getDeltaX(), Gdx.input.getDeltaY());
-			cam.update();
-		}*/
 
-
+		camera.position.x = Gdx.input.getX();
+		camera.position.y = Gdx.graphics.getHeight() - Gdx.input.getY();
 	}
 
 
